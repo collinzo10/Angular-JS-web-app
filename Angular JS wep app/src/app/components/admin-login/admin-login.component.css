@@ -1,0 +1,15 @@
+.title-group{
+    text-align: center;
+    padding: 10px;
+}
+
+.controlers-wrapper{
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-top: 50px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+  }

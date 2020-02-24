@@ -1,0 +1,56 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title></mat-card-title>
+  </mat-card-header>
+  <div>
+    <form
+      [formGroup]="joinGameForm"
+      (ngSubmit)="submitJoinGameForm()"
+      #resetJoinGameForm="ngForm"
+      novalidate
+    >
+      <!-- Left block -->
+      <mat-card>
+        <div class="controlers-wrapper">
+          <!-- Name -->
+          <label>Player: </label>
+          <label>{{ playerData.player_name }}</label>
+          <br />
+          <!-- Rank -->
+          <label>Rank: </label>
+          <label>{{ playerData.player_rank }}</label>
+          <br />
+          <!-- Score -->
+          <label>Score: </label>
+          <label>{{ playerData.score }}</label>
+          <br />
+          <!-- Time -->
+          <label>Time: </label>
+          <label>{{ playerData.time }}</label>
+          <br />
+          <!-- Favorite Game -->
+          <label>Favourite game: </label>
+          <label>{{ playerData.favorite_game }}</label>
+          <br />
+          <div>
+            <label
+              >Select a Game:
+              <mat-select class="games-list" formControlName="selectedGame">
+                <mat-option *ngFor="let game of gamesList" [value]="game">
+                  {{ game }}
+                </mat-option>
+              </mat-select>
+            </label>
+            <mat-error *ngIf="handleError('selectedGame', 'required')">
+              You must select a &nbsp;<strong>game</strong>
+            </mat-error>
+          </div>
+          <div class="full-wrapper button-wrapper">
+            <button type="submit" [disabled]="!joinGameForm.valid">Join</button>
+            <button [routerLink]="['/player-rankings/']">Cancel</button>
+          </div>
+        </div>
+      </mat-card>
+    </form>
+  </div>
+</mat-card>

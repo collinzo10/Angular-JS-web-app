@@ -1,0 +1,28 @@
+<div class="title-group">
+    <h1 class="mat-h1">Admin Login</h1>
+    <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+
+<form [formGroup]="adminLoginForm" (ngSubmit)="submitAdminLoginForm()" #resetAdminLoginForm="ngForm" novalidate>
+    <!-- Left block -->
+    <mat-card>
+        <div class="controlers-wrapper">
+            <mat-form-field>
+                <input matInput placeholder="User name" formControlName="userName">
+                <mat-error *ngIf="handleError('userName', 'required')">
+                    You must enter a &nbsp;<strong>user name</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password">
+                <mat-error *ngIf="handleError('password', 'required')">
+                    You must enter a &nbsp;<strong>password</strong>
+                </mat-error>
+            </mat-form-field>
+            <div class="full-wrapper button-wrapper">
+                <button type="submit" [disabled]="!adminLoginForm.valid">Log in</button>
+                <button [routerLink]="['/player-rankings/']">Cancel</button>
+            </div>
+        </div>
+    </mat-card>
+</form>

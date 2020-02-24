@@ -1,0 +1,19 @@
+<!-- Toolbar -->
+<mat-toolbar color="accent" class="header">
+  <div>Player Records</div>
+  <div>
+  <a mat-button routerLinkActive="active" routerLink="players-list" *ngIf="isLoggedIn">Edit/Admin View</a>
+  <a mat-button routerLinkActive="active" routerLink="add-player" *ngIf="isLoggedIn">Add Players</a>
+  <a mat-button routerLinkActive="active" routerLink="games-list" *ngIf="isLoggedIn">List of Games</a>
+  <a mat-button routerLinkActive="active" routerLink="/player-rankings">Player-Rankings</a>  
+  <a mat-button routerLinkActive="active" routerLink="admin-login" *ngIf="!isLoggedIn">Login</a>
+  <a mat-button (click)="adminLogout()" *ngIf="isLoggedIn">Logout</a>
+  </div>
+</mat-toolbar>
+
+
+
+  <!-- Main content -->
+<div id="borderbox">
+    <router-outlet></router-outlet>
+</div>

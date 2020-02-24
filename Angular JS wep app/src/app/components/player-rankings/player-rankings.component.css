@@ -1,0 +1,14 @@
+table {
+  background-color: palegreen;
+}
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 3%;
+}
+
+.title-group{
+  text-align: center;
+  margin-top: 20px;
+}
