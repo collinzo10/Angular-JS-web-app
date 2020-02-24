@@ -1,7 +1,7 @@
 # Angular-JS-web-app
 a basic CRUD app
 
-Zac Shaw 101074878 Collins Mbuton 101175934
+CopyRight @CollinsMbuton
 
 login info:
     username:admin
